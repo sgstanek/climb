@@ -12,3 +12,18 @@ source venv/bin/activate
 
 # Install the dependencies from requirements.txt
 pip install -r requirements.txt
+
+python - << END
+import getpass
+from dotenv import set_key
+
+# Ask for password
+password = getpass.getpass()
+
+# Write password to .env file
+set_key(".env", "CLIMB_DB_PASS", password)
+
+print("Password saved in .env file.")
+END
+
+echo "Python setup complete."

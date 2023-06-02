@@ -1,4 +1,0 @@
-A script is provided to setup the python venv for this project. Use these two commands to run the script:
-
-chmod +x pythonSetup.sh
-./setup.sh
