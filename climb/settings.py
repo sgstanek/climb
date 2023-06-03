@@ -16,7 +16,8 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 from dotenv import dotenv_values
 
-env_variables = dotenv_values('.venv')
+ENV_PATH = os.path.join(BASE_DIR, '.env')
+env_variables = dotenv_values(ENV_PATH)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -77,13 +78,12 @@ WSGI_APPLICATION = 'climb.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'climbdb',
         'USER': 'climbdbuser',
-        'PASSWORD': os.environ.get('CLIMB_DB_PASS'),
+        'PASSWORD': env_variables.get('CLIMB_DB_PASS'),
         'HOST': 'localhost',
         'PORT': '', # leave it empty to use the default port
     }
