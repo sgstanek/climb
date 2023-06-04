@@ -3,6 +3,7 @@
 # Update package lists
 sudo apt-get update
 
+source venv/bin/activate
 # Install PostgreSQL
 sudo apt-get install -y postgresql postgresql-contrib
 
@@ -26,7 +27,6 @@ psql -c "ALTER DATABASE climbdb SET timezone TO 'UTC';"
 # Exit from postgres user
 EOF
 
-source venv/bin/activate
 python manage.py makemigrations dataManager
 python manage.py makemigrations
 python manage.py migrate
