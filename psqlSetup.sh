@@ -30,4 +30,5 @@ EOF
 python manage.py makemigrations dataManager
 python manage.py makemigrations
 python manage.py migrate
+python manage.py flush
 python manage.py loaddata all_data.json

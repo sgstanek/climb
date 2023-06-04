@@ -31,7 +31,9 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 # Site ID for Django sites framework
-SITE_ID = 2
+
+
+SITE_ID = 3
 
 # Application definition
 
