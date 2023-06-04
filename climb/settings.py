@@ -30,16 +30,26 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# Site ID for Django sites framework
+SITE_ID = 2
 
 # Application definition
 
 INSTALLED_APPS = [
+    # standard apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    # allauth apps
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
+    # custom apps
     'pageManager',
     'dataManager',
     'accountManager'
@@ -75,6 +85,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'climb.wsgi.application'
 
+# After logging in, user is redirected here
+LOGIN_REDIRECT_URL = '/'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
@@ -139,3 +151,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+AUTHENTICATION_BACKENDS = (
+   "django.contrib.auth.backends.ModelBackend",
+   "allauth.account.auth_backends.AuthenticationBackend",
+)
