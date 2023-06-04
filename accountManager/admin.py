@@ -1,5 +1,7 @@
 from django.contrib import admin
-
+from django.contrib.auth.admin import UserAdmin
 # Register your models here.
 from accountManager.models import *
-admin.site.register(Profile, SiteUser)
+
+admin.site.register(Profile)
+

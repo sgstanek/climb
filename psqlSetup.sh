@@ -27,8 +27,6 @@ psql -c "ALTER DATABASE climbdb SET timezone TO 'UTC';"
 # Exit from postgres user
 EOF
 
-python manage.py makemigrations dataManager
-python manage.py makemigrations
-python manage.py migrate
 python manage.py flush
+./migrate.sh
 # python manage.py loaddata all_data.json
