@@ -16,6 +16,7 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 from dotenv import dotenv_values
 
+
 ENV_PATH = os.path.join(BASE_DIR, '.env')
 env_variables = dotenv_values(ENV_PATH)
 
@@ -32,8 +33,8 @@ ALLOWED_HOSTS = []
 
 # Site ID for Django sites framework
 
-
-SITE_ID = 3
+default_value = 10
+SITE_ID = int(env_variables.get('LOCALHOST_ID', default_value))
 
 # Application definition
 

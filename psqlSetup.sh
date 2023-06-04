@@ -29,4 +29,4 @@ EOF
 
 python manage.py flush
 ./migrate.sh
-# python manage.py loaddata all_data.json
+python manage.py loaddata seedData.json
