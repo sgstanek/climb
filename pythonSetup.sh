@@ -17,6 +17,7 @@ python - << END
 import getpass
 from dotenv import set_key
 
+print("Enter desired database password")
 # Ask for password
 password = getpass.getpass()
 
