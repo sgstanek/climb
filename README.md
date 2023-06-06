@@ -7,7 +7,7 @@ A script is provided to setup the python venv and the psql database for this pro
 	chmod +x *.sh
 	./setup.sh
 	
-Now the python enviorment and database should both be working, and the database migrations should be applied. You can start the server with:
+The code will ask for the Google client and secret. Now the python enviorment and database should both be working, and the database migrations should be applied. You can start the server with:
 
 	./run.sh
 
