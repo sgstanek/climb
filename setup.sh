@@ -5,4 +5,4 @@ chmod +x *.sh
 ./psqlSetup.sh
 
 source venv/bin/activate
-python setupSocal.py
+python setupSocial.py
