@@ -13,6 +13,8 @@ sudo service postgresql start
 # Switch to the PostgreSQL user
 sudo su - postgres <<EOF
 # Create the user
+psql -c "DROP DATABASE climbdb";
+psql -c "DROP USER climbdbuser";
 psql -c "CREATE USER climbdbuser WITH PASSWORD '$(dotenv -f .env get CLIMB_DB_PASS)';"
 
 # Create the database with the new user as owner
